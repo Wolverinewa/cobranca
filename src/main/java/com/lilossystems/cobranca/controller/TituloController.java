@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.lilossystems.cobranca.model.Titulo;
 import com.lilossystems.cobranca.repository.Titulos;
@@ -21,13 +22,16 @@ public class TituloController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String salvar(Titulo titulo) {
+	public ModelAndView salvar(Titulo titulo) {
 		
 		//System.out.println(">>> " + titulo.getDescricao());
 		
 		titulos.save(titulo);
 		
-		// Retorna para uma VIEW
-		return "CadastroTitulo";
+		ModelAndView mv = new ModelAndView("CadastroTitulo");
+		mv.addObject("mensagem", "Título salvo com sucesso!!");
+		
+		// Retorna ModelAndView para uma VIEW
+		return mv;
 	}
 }
