@@ -2,15 +2,16 @@ package com.lilossystems.cobranca.model;
 
 public enum StatusTitulo {
 	PENDENTE("Pendente"),
-	RECEBIDO("Recebido");
+	RECEBIDO("Recebido"),
+	CANCELADO("Cancelado");
 	
 	private String descricao;
 	
-	private StatusTitulo(String descricao) {
+	StatusTitulo(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	private String getDescricao() {
+	public String getDescricao() {
 		return this.descricao;
 	}
 }
