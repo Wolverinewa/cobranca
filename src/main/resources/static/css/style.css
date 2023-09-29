@@ -12,3 +12,13 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+.ls-link-panel {
+	float: right;
+	padding: 0px;
+}
+
+.ls-titulo-panel {
+	float: left;
+	padding-top: 2px;
+}
